@@ -3,6 +3,7 @@
 /* ----------------------------- */
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../utilities/theme-context";
+import styles from "./button.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -14,7 +15,7 @@ function Button({ type, onClick, classNames, getSvg, langKey }) {
   return (
     <div
       aria-label="button-container"
-      className={`${classNames}${theme === "dark" ? " dark" : ""}`}
+      className={`${styles.button} ${classNames}${theme === "dark" ? " dark" : ""}`}
     >
       <button
         type={type}

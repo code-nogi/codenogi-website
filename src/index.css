@@ -167,69 +167,6 @@ svg {
     }
   }
 }
-button {
-  all: unset;
-  cursor: pointer;
-  &.centered {
-    text-align: center;
-  }
-}
-.letter-spacing-anim {
-  position: relative;
-  container-type: inline-size;
-  & a,
-  & button {
-    font-size: min(5cqw, 1.5rem);
-    position: relative;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: var(--color-dark);
-    padding: 0.5rem 1rem;
-    overflow: hidden;
-    transition: 0.4s;
-    &::before {
-      content: attr(data-text);
-      position: absolute;
-      bottom: 0;
-      width: 330vw;
-      height: 1rem;
-      pointer-events: none;
-      z-index: 1;
-      font-size: 0.8rem;
-      line-height: 0.8rem;
-      padding: 0.3rem 0;
-      overflow: hidden;
-      color: var(--color-dark);
-      letter-spacing: 100px;
-      opacity: 0;
-      transition: 0.4s ease-out;
-    }
-    &.active,
-    &:hover,
-    &:focus-visible {
-      color: var(--color-dark-faded);
-      transform: translateY(-15px);
-      &::before {
-        letter-spacing: 0.4rem;
-        opacity: 1;
-      }
-    }
-  }
-  &.dark a,
-  &.dark button {
-    color: var(--color-green-glow);
-    filter: saturate(3);
-    &.active,
-    &:hover,
-    &:focus-visible {
-      color: var(--color-green-faded);
-      &::before {
-        color: var(--color-green-glow);
-      }
-    }
-  }
-}
 
 /* ----------------------------- */
 /* HTML & BODY STYLE             */
@@ -283,26 +220,7 @@ body {
 /* MAIN STYLE                    */
 /* ----------------------------- */
 main {
-  grid-area: MAIN;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5rem;
-  margin-top: calc(21vh + 21vw);
-  margin-bottom: 5rem;
   & section {
-    /* display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: stretch;
-    margin: 0.5rem;
-    &.home {
-      margin-top: 0;
-    } */
-    /*     & .sectionheading {
-      font-size: min(8.8cqw, 3rem);
-      text-transform: uppercase;
-    } */
     & article,
     & .project-card {
       container-type: inline-size;
@@ -438,19 +356,6 @@ main {
   }
 }
 
-/* ----------------------------- */
-/* FOOTER STYLE                  */
-/* ----------------------------- */
-footer {
-  grid-area: FOOTER;
-  & .footer-content {
-    margin: 0.5rem;
-    & p {
-      font-size: 4cqw;
-    }
-  }
-}
-
 /* @supports (animation-timeline: view()) {
   section > * {
     animation: fade-in linear;
@@ -532,10 +437,6 @@ footer {
     grid-template-areas: "HEADER MAIN" "HEADER FOOTER";
   }
   main {
-    margin-top: calc(0.5rem + 8px);
-    margin-inline: auto;
-    width: stretch;
-    max-width: 950px;
     & section {
       & article.stack,
       & article.exp {
@@ -546,10 +447,5 @@ footer {
         }
       }
     }
-  }
-  footer {
-    width: stretch;
-    max-width: 950px;
-    margin-inline: auto;
   }
 }

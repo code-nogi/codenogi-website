@@ -2,6 +2,8 @@
 /* IMPORTS                       */
 /* ----------------------------- */
 import { useTranslation } from "react-i18next";
+import styles from "./footer.module.css";
+import generalStyles from "./basic-element.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -9,9 +11,12 @@ import { useTranslation } from "react-i18next";
 function Footer({ langKey }) {
   const { t } = useTranslation();
   return (
-    <footer>
-      <div aria-label="footer-content" className="basic-element footer-content">
-        <div className="color-backed">{t(langKey)}</div>
+    <footer className={styles.footer}>
+      <div
+        aria-label="footer-content"
+        className={`${generalStyles.basicElement} ${styles.footerContent}`}
+      >
+        <div className={generalStyles.colorBacked}>{t(langKey)}</div>
       </div>
     </footer>
   );

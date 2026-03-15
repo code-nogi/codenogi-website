@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import TextInput from "./textinput";
 import TextArea from "./textarea";
 import Button from "./button";
+import animStyles from "./letter-spacing-anim.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -28,7 +29,7 @@ function ContactForm() {
       <Button
         type="submit"
         onClick={null}
-        classNames={"letter-spacing-anim"}
+        classNames={animStyles.letterSpacingAnim}
         getSvg={null}
         langKey="Send-message"
       />

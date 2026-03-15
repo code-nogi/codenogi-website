@@ -1,6 +1,6 @@
 /* TODOs:
 1. NODEMAILER!
-2. 
+2. LETTER-SPACING-ANIM vibration
 3. 
 4. 
 5. 
@@ -16,6 +16,7 @@ import { ThemeProvider } from "./utilities/theme-context";
 import Scroller from "./components/scroller";
 import Background from "./components/background";
 import Header from "./components/header";
+import Main from "./components/main";
 import Section from "./components/section";
 import SectionHeading from "./components/section-heading";
 import HomeArticle from "./components/home-article";
@@ -33,6 +34,9 @@ import Footer from "./components/footer";
 import Anchor from "./components/anchor";
 //UTILITY import
 import { projectDataArray } from "./utilities/constants";
+//STYLE import
+import generalStyles from "./components/basic-element.module.css";
+import animStyles from "./components/letter-spacing-anim.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -65,7 +69,7 @@ function App() {
       <ThemeProvider>
         <Background />
         <Header activeSection={activeSection} />
-        <main>
+        <Main>
           <Section id="home-ref" className="home">
             <SectionHeading langKey="Home" />
             <HomeArticle />
@@ -73,7 +77,7 @@ function App() {
             <Anchor
               activeSection={activeSection}
               href="#contact-ref"
-              classNames={"basic-element letter-spacing-anim"}
+              classNames={`${generalStyles.basicElement} ${animStyles.letterSpacingAnim}`}
               getSvg={null}
               langKey="Work-with-me"
             />
@@ -107,7 +111,7 @@ function App() {
             <ContactArticle />
             <ContactForm />
           </Section>
-        </main>
+        </Main>
         <Footer langKey="Footer" />
       </ThemeProvider>
     </>

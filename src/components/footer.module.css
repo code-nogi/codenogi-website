@@ -1,0 +1,17 @@
+.footer {
+  grid-area: FOOTER;
+  & .footerContent {
+    margin: 0.5rem;
+    & p {
+      font-size: 4cqw;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    width: stretch;
+    max-width: 950px;
+    margin-inline: auto;
+  }
+}
