@@ -1,20 +1,16 @@
 /* ----------------------------- */
 /* IMPORTS                       */
 /* ----------------------------- */
-import styles from "./section.module.css";
+import styles from "./scroller.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
-function Section({ id, className, children }) {
-  return (
-    <section id={id} className={`${className} ${styles.section}`}>
-      {children}
-    </section>
-  );
+function Scroller() {
+  return <span className={styles.scroller}></span>;
 }
 
 /* ----------------------------- */
 /* EXPORTS                       */
 /* ----------------------------- */
-export default Section;
+export default Scroller;

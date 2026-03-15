@@ -1,0 +1,37 @@
+.modeSelection {
+  grid-area: MODES;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  gap: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  & button,
+  & a {
+    display: block;
+    height: var(--icon-height);
+    min-width: var(--icon-height);
+    transition: var(--transition-duration);
+    &:hover {
+      filter: saturate(3);
+    }
+  }
+  & .modeItems {
+    &.darkMode svg path {
+      fill: var(--color-dark-background);
+      transition: var(--transition-duration);
+    }
+    &.lightMode svg path {
+      fill: var(--color-light-background);
+      transition: var(--transition-duration);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modeSelection {
+    justify-content: space-evenly;
+    width: stretch;
+  }
+}

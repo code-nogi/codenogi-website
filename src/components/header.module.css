@@ -1,0 +1,25 @@
+.header {
+  grid-area: HEADER;
+  position: fixed;
+  top: 8px;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  grid-template-areas: "LOGO TITLE TITLE" "MENU SOCIAL MODES";
+  gap: 0.5rem;
+  width: stretch;
+  min-width: calc(var(--body-min-width) - 1rem);
+  margin: 0.5rem;
+  z-index: 100;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas: "LOGO LOGO" "TITLE TITLE" "SOCIAL MODES" "MENU MENU";
+    width: calc(300px - 0.5rem);
+    min-width: auto;
+    height: calc(100vh - 1rem - 8px);
+  }
+}

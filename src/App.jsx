@@ -13,6 +13,7 @@
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./utilities/theme-context";
 //COMPONENT import
+import Scroller from "./components/scroller";
 import Background from "./components/background";
 import Header from "./components/header";
 import Section from "./components/section";
@@ -60,7 +61,7 @@ function App() {
 
   return (
     <>
-      <span className="scroll-watcher"></span>
+      <Scroller />
       <ThemeProvider>
         <Background />
         <Header activeSection={activeSection} />

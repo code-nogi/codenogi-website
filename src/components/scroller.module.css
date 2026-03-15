@@ -1,0 +1,18 @@
+.scroller {
+  height: 8px;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: var(--color-green-glow);
+  animation: scroll-watching linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watching {
+  to {
+    scale: 1 1;
+  }
+}

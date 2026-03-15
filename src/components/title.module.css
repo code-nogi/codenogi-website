@@ -1,0 +1,17 @@
+.title {
+  grid-area: TITLE;
+  & div {
+    & h1 {
+      font-size: 13cqw;
+      line-height: 13cqw;
+      text-align: center;
+      text-shadow: 0 0 2px var(--color-dark);
+    }
+    & h2 {
+      font-size: 9.8cqw;
+      line-height: 9.8cqw;
+      text-align: center;
+      text-shadow: 0 0 2px var(--color-dark);
+    }
+  }
+}

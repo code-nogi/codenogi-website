@@ -3,6 +3,8 @@
 /* ----------------------------- */
 import { getGithubSVG, getLinkedINSVG } from "../utilities/svg-getters";
 import Anchor from "./anchor";
+import styles from "./social.module.css";
+import generalStyles from "./basic-element.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -11,7 +13,7 @@ function Social() {
   return (
     <div
       aria-label="social profile anchor container"
-      className="social-media basic-element"
+      className={`${styles.socialMedia} ${generalStyles.basicElement}`}
     >
       <Anchor
         activeSection=""

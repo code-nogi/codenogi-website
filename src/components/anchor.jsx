@@ -3,6 +3,7 @@
 /* ----------------------------- */
 import { useTheme } from "../utilities/theme-context";
 import { useTranslation } from "react-i18next";
+import styles from "./anchor.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */

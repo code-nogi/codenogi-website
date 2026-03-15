@@ -167,13 +167,6 @@ svg {
     }
   }
 }
-.lang-inactive,
-.mode-inactive {
-  display: none;
-}
-a {
-  color: var(--color-dark);
-}
 button {
   all: unset;
   cursor: pointer;
@@ -191,7 +184,6 @@ button {
     display: block;
     text-decoration: none;
     text-transform: uppercase;
-    /* font-size: 1.3rem; */
     color: var(--color-dark);
     padding: 0.5rem 1rem;
     overflow: hidden;
@@ -258,22 +250,6 @@ body {
 }
 
 /* ----------------------------- */
-/* SCROLLER STYLE                */
-/* ----------------------------- */
-.scroll-watcher {
-  height: 8px;
-  width: 100%;
-  scale: 0 1;
-  transform-origin: left;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  background: var(--color-green-glow);
-  animation: scroll-watching linear;
-  animation-timeline: scroll();
-}
-
-/* ----------------------------- */
 /* BACKGROUND STYLE              */
 /* ----------------------------- */
 .background {
@@ -304,164 +280,6 @@ body {
 }
 
 /* ----------------------------- */
-/* HEADER STYLE                  */
-/* ----------------------------- */
-header {
-  grid-area: HEADER;
-  position: fixed;
-  top: 8px;
-  left: 0;
-  display: grid;
-  grid-template-columns: 1fr 0.8fr 1fr;
-  grid-template-areas: "LOGO TITLE TITLE" "MENU SOCIAL MODES";
-  gap: 0.5rem;
-  width: stretch;
-  min-width: calc(var(--body-min-width) - 1rem);
-  margin: 0.5rem;
-  z-index: 100;
-  & .codenogi-logo {
-    grid-area: LOGO;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & svg {
-      color: radial-gradient(
-        circle,
-        var(--color-green-glow) 11%,
-        var(--color-light-background) 100%
-      );
-    }
-  }
-  & .title {
-    grid-area: TITLE;
-    & div {
-      & h1 {
-        font-size: 13cqw;
-        line-height: 13cqw;
-        text-align: center;
-        text-shadow: 0 0 2px var(--color-dark);
-      }
-      & h2 {
-        font-size: 9.8cqw;
-        line-height: 9.8cqw;
-        text-align: center;
-        text-shadow: 0 0 2px var(--color-dark);
-      }
-    }
-  }
-  nav {
-    grid-area: MENU;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
-    position: relative;
-    & .toggle {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      align-self: normal;
-      position: relative;
-      height: var(--icon-height);
-      width: var(--icon-height);
-      transition: var(--transition-duration);
-      cursor: pointer;
-      z-index: 10;
-      &:hover,
-      &:focus-visible {
-        filter: saturate(3);
-      }
-      &.menu-active {
-        box-shadow: 0 0 8px 2px var(--color-red);
-        border: 3px solid var(--color-red);
-        & span {
-          background: var(--color-red);
-        }
-        & span:nth-of-type(1) {
-          transform: translateY(8.5px) rotate(45deg);
-        }
-        & span:nth-of-type(2) {
-          opacity: 0;
-        }
-        & span:nth-of-type(3) {
-          transform: translateY(-8.5px) rotate(-45deg);
-        }
-      }
-      & span {
-        list-style: none;
-        position: relative;
-        width: 80%;
-        height: 4px;
-        background: var(--color-green-glow);
-        transition: var(--transition-duration);
-      }
-    }
-    & .menu {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: calc(var(--icon-height) + 1.5rem + 6px);
-      translate: -120%;
-      list-style-type: none;
-      transition: var(--transition-duration);
-      padding-top: 0.5rem;
-      overflow: clip;
-      &.menu-active {
-        translate: 0;
-      }
-      & li {
-        list-style: none;
-        text-align: left;
-        & div {
-          container-type: normal;
-          & a {
-            font-size: 1.5rem;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-  & .social-media,
-  & .mode-selection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    width: fit-content;
-    height: fit-content;
-    & button,
-    & a {
-      display: block;
-      height: var(--icon-height);
-      min-width: var(--icon-height);
-      transition: var(--transition-duration);
-      &:hover {
-        filter: saturate(3);
-      }
-    }
-    & .mode-items {
-      &.dark-mode svg path {
-        fill: var(--color-dark-background);
-        transition: var(--transition-duration);
-      }
-      &.light-mode svg path {
-        fill: var(--color-light-background);
-        transition: var(--transition-duration);
-      }
-    }
-  }
-  & .social-media {
-    grid-area: SOCIAL;
-    justify-self: center;
-  }
-  & .mode-selection {
-    grid-area: MODES;
-    justify-self: flex-end;
-  }
-}
-
-/* ----------------------------- */
 /* MAIN STYLE                    */
 /* ----------------------------- */
 main {
@@ -473,18 +291,18 @@ main {
   margin-top: calc(21vh + 21vw);
   margin-bottom: 5rem;
   & section {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: stretch;
     margin: 0.5rem;
     &.home {
       margin-top: 0;
-    }
-    & .sectionheading {
+    } */
+    /*     & .sectionheading {
       font-size: min(8.8cqw, 3rem);
       text-transform: uppercase;
-    }
+    } */
     & article,
     & .project-card {
       container-type: inline-size;
@@ -645,12 +463,6 @@ footer {
 /* ----------------------------- */
 /* ANIMATIONS                    */
 /* ----------------------------- */
-@keyframes scroll-watching {
-  to {
-    scale: 1 1;
-  }
-}
-
 @keyframes drawing {
   0% {
     stroke-dashoffset: 38;
@@ -718,37 +530,6 @@ footer {
     display: grid;
     grid-template-columns: 300px auto;
     grid-template-areas: "HEADER MAIN" "HEADER FOOTER";
-  }
-  header {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto 1fr;
-    grid-template-areas: "LOGO LOGO" "TITLE TITLE" "SOCIAL MODES" "MENU MENU";
-    width: calc(300px - 0.5rem);
-    min-width: auto;
-    height: calc(100vh - 1rem - 8px);
-    & .social-media,
-    & .mode-selection {
-      justify-content: space-evenly;
-      width: stretch;
-    }
-    & nav {
-      align-self: stretch;
-      & .toggle {
-        display: none;
-      }
-      & .menu {
-        justify-content: space-evenly;
-        flex: 1;
-        position: static;
-        translate: 0;
-        & a {
-          padding: 0 1rem;
-          &::before {
-            bottom: -0.3rem;
-          }
-        }
-      }
-    }
   }
   main {
     margin-top: calc(0.5rem + 8px);

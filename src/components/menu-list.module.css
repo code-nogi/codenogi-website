@@ -1,0 +1,40 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(var(--icon-height) + 1.5rem + 6px);
+  translate: -120%;
+  list-style-type: none;
+  transition: var(--transition-duration);
+  padding-top: 0.5rem;
+  overflow: clip;
+  &.menuActive {
+    translate: 0;
+  }
+  & li {
+    list-style: none;
+    text-align: left;
+    & div {
+      container-type: normal;
+      & a {
+        font-size: 1.5rem;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    justify-content: space-evenly;
+    flex: 1;
+    position: static;
+    translate: 0;
+    & a {
+      padding: 0 1rem;
+      &::before {
+        bottom: -0.3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.basicElement {
+  position: relative;
+  color: var(--color-green-glow);
+  backdrop-filter: saturate(0.11) blur(3px);
+  border: 3px solid var(--color-green-glow);
+  border-radius: 5px;
+  box-shadow: 0 0 8px 2px var(--color-green-glow);
+  padding: 0.5rem;
+  & .colorBacked {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: stretch;
+    height: stretch;
+    color: var(--color-dark);
+    background: var(--color-green-glow);
+    background: radial-gradient(
+      circle,
+      var(--color-green-glow) 11%,
+      var(--color-light-background) 100%
+    );
+    padding: 1cqw;
+    border-radius: 3px;
+    &.white {
+      background: var(--color-light-background);
+    }
+    &.transparent {
+      background: transparent;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.socialMedia {
+  grid-area: SOCIAL;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  gap: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  & a {
+    display: block;
+    height: var(--icon-height);
+    min-width: var(--icon-height);
+    transition: var(--transition-duration);
+    &:hover {
+      filter: saturate(3);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .socialMedia {
+    justify-content: space-evenly;
+    width: stretch;
+  }
+}

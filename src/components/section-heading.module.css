@@ -1,0 +1,4 @@
+& .sectionheading {
+  font-size: min(8.8cqw, 3rem);
+  text-transform: uppercase;
+}

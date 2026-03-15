@@ -1,0 +1,13 @@
+& .logo {
+  grid-area: LOGO;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & svg {
+    color: radial-gradient(
+      circle,
+      var(--color-green-glow) 11%,
+      var(--color-light-background) 100%
+    );
+  }
+}

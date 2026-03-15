@@ -10,6 +10,8 @@ import {
   getLightModeSVG,
   getDarkModeSVG,
 } from "../utilities/svg-getters.jsx";
+import styles from "./modes.module.css";
+import generalStyles from "./basic-element.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -21,25 +23,23 @@ function Modes() {
   return (
     <div
       aria-label="lang and mode selection container"
-      className="mode-selection basic-element"
+      className={`${styles.modeSelection} ${generalStyles.basicElement}`}
     >
       <Button
         type="button"
         onClick={() =>
           i18n.changeLanguage(i18n.language === "en" ? "hu" : "en")
         }
-        classNames={
-          i18n.language === "en" ? "mode-items lang-hun" : "mode-items lang-eng"
-        }
+        classNames={styles.modeItems}
         getSvg={i18n.language === "en" ? getHunFlagSVG : getEngFlagSVG}
         langKey="Lang"
       />
       <Button
         type="button"
         onClick={toggleTheme}
-        classNames={
-          theme === "light" ? "mode-items light-mode" : "mode-items dark-mode"
-        }
+        classNames={`
+          ${styles.modeItems} ${theme === "light" ? styles.lightMode : styles.darkMode}
+        `}
         getSvg={theme === "light" ? getDarkModeSVG : getLightModeSVG}
         langKey={theme === "light" ? "Light-mode" : "Dark-mode"}
       />

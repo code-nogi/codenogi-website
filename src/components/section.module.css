@@ -1,0 +1,10 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: stretch;
+  margin: 0.5rem;
+  &.home {
+    margin-top: 0;
+  }
+}
