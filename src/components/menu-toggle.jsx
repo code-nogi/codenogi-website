@@ -1,6 +1,8 @@
 /* ----------------------------- */
 /* IMPORTS                       */
 /* ----------------------------- */
+import Button from "./button";
+import { getMenuSVG } from "../utilities/svg-getters.jsx";
 import styles from "./menu-toggle.module.css";
 import generalStyles from "./basic-element.module.css";
 
@@ -9,18 +11,18 @@ import generalStyles from "./basic-element.module.css";
 /* ----------------------------- */
 function MenuToggle({ onClick, isOpen }) {
   return (
-    <button
+    <div
       aria-label="Toggle navigation menu"
-      aria-expanded={isOpen}
-      className={`${styles.toggle} ${generalStyles.basicElement} ${
-        isOpen ? styles.menuActive : ""
-      }`}
-      onClick={onClick}
+      className={`${styles.toggle} ${generalStyles.basicElement} ${isOpen ? styles.menuActive : ""}`}
     >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <Button
+        type="button"
+        onClick={onClick}
+        className=""
+        getSvg={getMenuSVG}
+        langKey={null}
+      />
+    </div>
   );
 }
 

@@ -41,6 +41,24 @@ const getLogoSVG = () => (
   </svg>
 );
 
+const getMenuSVG = () => (
+  <svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 512 512"
+    xmlSpace="preserve"
+  >
+    <g>
+      <path
+        fill="currentColor"
+        d="M0,0v512h512V0H0z M407.992,398.492h-304v-57h304V398.492z M407.992,284.484h-304v-56.976h304V284.484z
+		 M407.992,170.492h-304V113.5h304V170.492z"
+      />
+    </g>
+  </svg>
+);
+
 const getGithubSVG = () => (
   <svg
     fill="currentColor"
@@ -535,6 +553,7 @@ const getAlertSVG = () => (
 
 export {
   getLogoSVG,
+  getMenuSVG,
   getGithubSVG,
   getLinkedINSVG,
   getEnterSVG,

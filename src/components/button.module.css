@@ -1,6 +1,8 @@
 .button {
-  all: unset;
-  cursor: pointer;
+  & button {
+    all: unset;
+    cursor: pointer;
+  }
   &.centered {
     text-align: center;
   }
