@@ -16,16 +16,16 @@ function Social() {
       className={`${styles.socialMedia} ${generalStyles.basicElement}`}
     >
       <Anchor
+        type="icon"
         activeSection=""
         href="https://github.com/code-nogi"
-        classNames={""}
         getSvg={getGithubSVG}
         langKey="Github"
       ></Anchor>
       <Anchor
+        type="icon"
         activeSection=""
         href="https://www.linkedin.com/in/jozsefnogradi/"
-        classNames={""}
         getSvg={getLinkedINSVG}
         langKey="Linkedin"
       ></Anchor>

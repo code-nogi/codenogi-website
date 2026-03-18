@@ -1,0 +1,84 @@
+.stackItemContainer {
+  position: relative;
+  cursor: pointer;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  &:hover .stackItemFront,
+  &:focus-visible .stackItemFront {
+    animation: slide-rotate-90 var(--animation-duration) linear forwards;
+  }
+  &:hover .stackItemBack,
+  &:focus-visible .stackItemBack {
+    animation: slide-rotate-180 var(--animation-duration) linear forwards;
+    animation-delay: var(--animation-delay);
+  }
+}
+.stackItemFront {
+  position: absolute;
+  width: 100%;
+}
+.stackItemBack {
+  position: absolute;
+  width: 100%;
+  transform: scale(-1, 1);
+  rotate: y 90deg;
+}
+.colorBacked {
+  container-type: inline-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: stretch;
+  height: stretch;
+  color: var(--color-dark);
+  background: var(--color-green-glow);
+  background: radial-gradient(
+    circle,
+    var(--color-green-glow) 11%,
+    var(--color-light-background) 100%
+  );
+  font-size: 15cqw;
+  aspect-ratio: 1;
+  padding: 1cqw;
+  border-radius: 3px;
+}
+.text {
+  font-size: 3cqw;
+}
+.white {
+  background: var(--color-light-background);
+}
+.transparent {
+  background: transparent;
+}
+
+@keyframes slide-rotate-90 {
+  0%,
+  100% {
+    rotate: y 0deg;
+  }
+  20% {
+    rotate: y 90deg;
+  }
+  80% {
+    rotate: y 90deg;
+  }
+}
+
+@keyframes slide-rotate-180 {
+  0%,
+  100% {
+    rotate: y 90deg;
+  }
+  20% {
+    rotate: y 180deg;
+  }
+  40% {
+    rotate: y 180deg;
+  }
+  60% {
+    rotate: y 90deg;
+  }
+}

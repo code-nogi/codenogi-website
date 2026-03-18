@@ -3,13 +3,14 @@
 /* ----------------------------- */
 import StackItem from "./stack-item";
 import { homeStackArray } from "../utilities/constants.js";
+import styles from "./stack.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
 function HomeStackArticle() {
   return (
-    <article className="stack">
+    <article className={styles.stack}>
       {homeStackArray.map((stack, index) => (
         <StackItem
           key={`homestack-${index + 1}`}

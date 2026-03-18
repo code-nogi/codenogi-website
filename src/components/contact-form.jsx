@@ -1,23 +1,29 @@
 /* ----------------------------- */
 /* IMPORTS                       */
 /* ----------------------------- */
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import TextInput from "./textinput";
 import TextArea from "./textarea";
 import Button from "./button";
+import useFormValidation from "../utilities/use-form-validation.js";
 import animStyles from "./letter-spacing-anim.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
 function ContactForm() {
+  const formRef = useRef(null);
   const { t } = useTranslation();
+  const { handleChange } = useFormValidation(formRef);
 
   return (
     <form
+      ref={formRef}
       action="https://formsubmit.co/piratosnogi@gmail.com"
       method="POST"
       className="contact-form basic-element"
+      onSubmit={handleChange}
     >
       <input type="hidden" name="_captcha" value="true" />
       <input type="hidden" name="_subject" value="Új üzenet a !gi-nak!!!" />

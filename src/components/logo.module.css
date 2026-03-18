@@ -1,4 +1,4 @@
-& .logo {
+.logo {
   grid-area: LOGO;
   display: flex;
   justify-content: center;

@@ -3,13 +3,14 @@
 /* ----------------------------- */
 import StackItem from "./stack-item";
 import { experienceStackArray } from "../utilities/constants.js";
+import styles from "./stack.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
 function AboutExperienceArticle() {
   return (
-    <article className="stack">
+    <article className={styles.stack}>
       {experienceStackArray.map((stack, index) => (
         <StackItem
           key={`expstack-${index + 1}`}

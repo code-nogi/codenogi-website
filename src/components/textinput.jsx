@@ -7,6 +7,7 @@ import InputMessage from "./input-message";
 import { getAlertSVG } from "../utilities/svg-getters";
 import useFormValidation from "../utilities/use-form-validation.js";
 import { useTheme } from "../utilities/theme-context";
+import styles from "./form-item.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -25,7 +26,7 @@ function TextInput({ langKey, type }) {
         required
         onChange={handleChange}
         placeholder={t(langKey)}
-        className={`form-item${theme === "dark" ? " dark" : ""}`}
+        className={`${styles.formItem} ${theme === "dark" ? "dark" : ""}`}
         name={langKey.toLowerCase().replace("-placeholder", "")}
         autoComplete="off"
         minLength={type === "email" ? "6" : "2"}
@@ -33,19 +34,11 @@ function TextInput({ langKey, type }) {
         pattern={type === "email" ? "[^@]+@[^@]+\\.[^@]+" : undefined}
       />
       {blank ? (
-        <InputMessage
-          langKey={langKey}
-          className="blank-txt"
-          getSVG={getAlertSVG}
-        />
+        <InputMessage type="blank" langKey={langKey} getSVG={getAlertSVG} />
       ) : valid ? (
         <></>
       ) : (
-        <InputMessage
-          langKey={langKey}
-          className="valid-txt"
-          getSVG={getAlertSVG}
-        />
+        <InputMessage type="invalid" langKey={langKey} getSVG={getAlertSVG} />
       )}
     </>
   );

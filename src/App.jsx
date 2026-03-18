@@ -34,9 +34,6 @@ import Footer from "./components/footer";
 import Anchor from "./components/anchor";
 //UTILITY import
 import { projectDataArray } from "./utilities/constants";
-//STYLE import
-import generalStyles from "./components/basic-element.module.css";
-import animStyles from "./components/letter-spacing-anim.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -65,8 +62,8 @@ function App() {
 
   return (
     <>
-      <Scroller />
       <ThemeProvider>
+        <Scroller />
         <Background />
         <Header activeSection={activeSection} />
         <Main>
@@ -77,7 +74,7 @@ function App() {
             <Anchor
               activeSection={activeSection}
               href="#contact-ref"
-              classNames={`${generalStyles.basicElement} ${animStyles.letterSpacingAnim}`}
+              type="individual"
               getSvg={null}
               langKey="Work-with-me"
             />

@@ -1,0 +1,38 @@
+.projectCard {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  & h2 {
+    font-size: min(8.8cqw, 3rem);
+  }
+  & h3 {
+    font-size: min(7.7cqw, 2rem);
+  }
+  & p {
+    font-size: min(5.5cqw, 1.5rem);
+  }
+  & .usedTech,
+  & .buttonPart {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.3rem;
+    & div {
+      width: min(10cqw, 3rem);
+    }
+    & a {
+      transition: var(--transition-duration);
+      &:hover,
+      &:focus-visible {
+        filter: saturate(3);
+      }
+    }
+  }
+  & .buttonPart {
+    justify-content: flex-end;
+    gap: 0.5rem;
+    & button {
+      width: 11cqw;
+    }
+  }
+}

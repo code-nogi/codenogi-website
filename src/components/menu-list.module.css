@@ -6,7 +6,7 @@
   translate: -120%;
   list-style-type: none;
   transition: var(--transition-duration);
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   overflow: clip;
   &.menuActive {
     translate: 0;
@@ -16,10 +16,6 @@
     text-align: left;
     & div {
       container-type: normal;
-      & a {
-        font-size: 1.5rem;
-        text-decoration: none;
-      }
     }
   }
 }

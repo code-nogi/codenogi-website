@@ -1,0 +1,40 @@
+.formItem {
+  container-type: inline-size;
+  width: 100%;
+  font-size: min(5cqw, 1.5rem);
+  resize: none;
+  background: transparent;
+  color: var(--color-green-glow);
+  border-bottom: 3px solid var(--color-green-glow);
+  border-left: 3px solid var(--color-green-glow);
+  padding: 0.2rem;
+  margin-block: 0.3rem;
+  &::placeholder {
+    color: var(--color-green-faded);
+  }
+  &:not(.dark):focus {
+    color: var(--color-dark);
+    border-bottom: 3px solid var(--color-dark);
+    border-left: 3px solid var(--color-dark);
+    animation: flashing var(--animation-duration) linear infinite;
+    &::placeholder {
+      color: var(--color-dark-faded);
+    }
+  }
+  &:focus {
+    filter: saturate(3);
+  }
+}
+/* & textarea {
+  resize: none;
+} */
+
+@keyframes flashing {
+  0%,
+  100% {
+    filter: none;
+  }
+  50% {
+    filter: drop-shadow(0 0 3px);
+  }
+}

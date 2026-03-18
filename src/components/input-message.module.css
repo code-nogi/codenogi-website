@@ -1,0 +1,14 @@
+.blank,
+.invalid {
+  container-type: inline-size;
+  display: flex;
+  gap: 2cqw;
+  min-width: calc(var(--body-min-width) - 2rem);
+  font-size: min(3.8cqw, 1.1rem);
+  color: var(--color-red);
+  & svg {
+    width: min(6cqw, 1.6rem);
+    aspect-ratio: 1;
+    color: inherit;
+  }
+}

@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import InputMessage from "./input-message";
 import { getAlertSVG } from "../utilities/svg-getters";
 import useFormValidation from "../utilities/use-form-validation.js";
+import styles from "./form-item.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -26,25 +27,17 @@ function TextArea({ langKey }) {
         required
         onChange={handleChange}
         placeholder={t(langKey)}
-        className={`form-item${theme === "dark" ? " dark" : ""}`}
+        className={`${styles.formItem} ${theme === "dark" ? "dark" : ""}`}
         name={langKey.toLowerCase().replace("-placeholder", "")}
         autoComplete="off"
         minLength="3"
       />
       {blank ? (
-        <InputMessage
-          langKey={langKey}
-          className="blank-txt"
-          getSVG={getAlertSVG}
-        />
+        <InputMessage type="blank" langKey={langKey} getSVG={getAlertSVG} />
       ) : valid ? (
         <></>
       ) : (
-        <InputMessage
-          langKey={langKey}
-          className="valid-txt"
-          getSVG={getAlertSVG}
-        />
+        <InputMessage type="invalid" langKey={langKey} getSVG={getAlertSVG} />
       )}
     </>
   );

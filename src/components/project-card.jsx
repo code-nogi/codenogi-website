@@ -4,6 +4,8 @@
 import Anchor from "./anchor";
 import { getGithubSVG, getEnterSVG } from "../utilities/svg-getters";
 import { useTranslation } from "react-i18next";
+import styles from "./project-card.module.css";
+import generalStyles from "./basic-element.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
@@ -13,32 +15,35 @@ function ProjectCard({ langKeys, techSVGs, githubURL, demoURL }) {
   return (
     <div
       aria-label="portfolio project card"
-      className="basic-element project-card"
+      className={`${styles.projectCard} ${generalStyles.basicElement}`}
     >
-      <h3 className="color-backed">{t(langKeys[0])}</h3>
+      <h3 className={generalStyles.colorBacked}>{t(langKeys[0])}</h3>
       <p aria-label="portfolio project description">{t(langKeys[1])}</p>
-      <div aria-label="portfolio project tech stack" className="used-tech">
+      <div
+        aria-label="portfolio project tech stack"
+        className={styles.usedTech}
+      >
         {techSVGs.map((svgGetter, index) => (
-          <div className="color-backed white" key={index}>
+          <div className={generalStyles.whiteBacked} key={index}>
             {svgGetter()}
           </div>
         ))}
       </div>
       <div
         aria-label="portfolio project anchor container"
-        className="button-part"
+        className={styles.buttonPart}
       >
         <Anchor
+          type="icon"
           activeSection={null}
           href={githubURL}
-          classNames=""
           getSvg={getGithubSVG}
           langKey="Github-project"
         />
         <Anchor
+          type="icon"
           activeSection={null}
           href={demoURL}
-          classNames=""
           getSvg={getEnterSVG}
           langKey="Demo-project"
         />

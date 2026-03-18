@@ -9,13 +9,13 @@
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-dark);
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
     overflow: hidden;
     transition: 0.4s;
     &::before {
       content: attr(data-text);
       position: absolute;
-      bottom: 0;
+      bottom: -0.5rem;
       width: 330vw;
       height: 1rem;
       pointer-events: none;
@@ -40,17 +40,17 @@
       }
     }
   }
-  &.dark a,
-  &.dark button {
-    color: var(--color-green-glow);
-    filter: saturate(3);
-    &.active,
-    &:hover,
-    &:focus-visible {
-      color: var(--color-green-faded);
-      &::before {
-        color: var(--color-green-glow);
-      }
+}
+.dark a,
+.dark button {
+  color: var(--color-green-glow);
+  filter: saturate(3);
+  &.active,
+  &:hover,
+  &:focus-visible {
+    color: var(--color-green-faded);
+    &::before {
+      color: var(--color-green-glow);
     }
   }
 }

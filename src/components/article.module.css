@@ -1,0 +1,12 @@
+.article {
+  container-type: inline-size;
+  & h2 {
+    font-size: min(8.8cqw, 3rem);
+  }
+  & h3 {
+    font-size: min(7.7cqw, 2rem);
+  }
+  & p {
+    font-size: min(5.5cqw, 1.5rem);
+  }
+}

@@ -134,39 +134,6 @@ svg {
     position: absolute;
   }
 }
-.basic-element {
-  position: relative;
-  color: var(--color-green-glow);
-  backdrop-filter: saturate(0.11) blur(3px);
-  border: 3px solid var(--color-green-glow);
-  border-radius: 5px;
-  box-shadow: 0 0 8px 2px var(--color-green-glow);
-  padding: 0.5rem;
-  & .color-backed {
-    container-type: inline-size;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: stretch;
-    height: stretch;
-    color: var(--color-dark);
-    background: var(--color-green-glow);
-    background: radial-gradient(
-      circle,
-      var(--color-green-glow) 11%,
-      var(--color-light-background) 100%
-    );
-    padding: 1cqw;
-    border-radius: 3px;
-    &.white {
-      background: var(--color-light-background);
-    }
-    &.transparent {
-      background: transparent;
-    }
-  }
-}
 
 /* ----------------------------- */
 /* HTML & BODY STYLE             */
@@ -174,8 +141,6 @@ svg {
 * {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 html {
   scroll-behavior: smooth;
@@ -217,155 +182,6 @@ body {
 }
 
 /* ----------------------------- */
-/* MAIN STYLE                    */
-/* ----------------------------- */
-main {
-  & section {
-    & article,
-    & .project-card {
-      container-type: inline-size;
-      & h2 {
-        font-size: min(8.8cqw, 3rem);
-      }
-      & h3 {
-        font-size: min(7.7cqw, 2rem);
-      }
-      & p {
-        font-size: min(5.5cqw, 1.5rem);
-      }
-    }
-    & article.stack,
-    & article.exp {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 0.5rem;
-      & > div {
-        position: relative;
-        cursor: pointer;
-        aspect-ratio: 1;
-        transform-style: preserve-3d;
-        perspective: 1000px;
-        & > div {
-          position: absolute;
-          width: 100%;
-          &:nth-of-type(2) {
-            transform: scale(-1, 1);
-            rotate: y 90deg;
-          }
-        }
-        & div.color-backed {
-          container-type: inline-size;
-          font-size: 15cqw;
-          text-align: center;
-          aspect-ratio: 1;
-          &.text {
-            font-size: 3cqw;
-          }
-        }
-        &:hover > div,
-        &:focus-visible > div {
-          animation: slide-rotate-90 var(--animation-duration) linear forwards;
-          &:nth-of-type(2) {
-            animation: slide-rotate-180 var(--animation-duration) linear
-              forwards;
-            animation-delay: var(--animation-delay);
-          }
-        }
-      }
-    }
-    & .project-card {
-      container-type: inline-size;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      & .used-tech,
-      & .button-part {
-        display: flex;
-        justify-content: flex-start;
-        gap: 0.3rem;
-        & div {
-          width: min(10cqw, 3rem);
-        }
-        & a {
-          transition: var(--transition-duration);
-          &:hover,
-          &:focus-visible {
-            filter: saturate(3);
-          }
-        }
-      }
-      & .button-part {
-        justify-content: flex-end;
-        gap: 0.5rem;
-        & button {
-          width: 11cqw;
-        }
-      }
-    }
-  }
-}
-
-/* ----------------------------- */
-/* CONTACT FORM STYLE            */
-/* ----------------------------- */
-.contact {
-  & .contact-form {
-    & .form-item {
-      container-type: inline-size;
-      width: 100%;
-      font-size: min(5cqw, 1.5rem);
-      background: transparent;
-      color: var(--color-green-glow);
-      border-bottom: 3px solid var(--color-green-glow);
-      border-left: 3px solid var(--color-green-glow);
-      padding: 0.2rem;
-      margin-block: 0.3rem;
-      &::placeholder {
-        color: var(--color-green-faded);
-      }
-      &:not(.dark):focus {
-        color: var(--color-dark);
-        border-bottom: 3px solid var(--color-dark);
-        border-left: 3px solid var(--color-dark);
-        animation: flashing var(--animation-duration) linear infinite;
-        &::placeholder {
-          color: var(--color-dark-faded);
-        }
-      }
-      &:focus {
-        filter: saturate(3);
-      }
-    }
-    & textarea {
-      resize: none;
-    }
-    & .blank-txt,
-    & .valid-txt {
-      container-type: inline-size;
-      display: flex;
-      gap: 2cqw;
-      min-width: calc(var(--body-min-width) - 2rem);
-      font-size: min(3.8cqw, 1.1rem);
-      color: var(--color-red);
-      & svg {
-        width: min(6cqw, 1.6rem);
-        aspect-ratio: 1;
-        color: inherit;
-      }
-    }
-  }
-}
-
-/* @supports (animation-timeline: view()) {
-  section > * {
-    animation: fade-in linear;
-    animation-timeline: view();
-    animation-range-start: 70vh;
-    animation-range-end: 140vh;
-  }
-} */
-
-/* ----------------------------- */
 /* ANIMATIONS                    */
 /* ----------------------------- */
 @keyframes drawing {
@@ -380,72 +196,10 @@ main {
   }
 }
 
-@keyframes fade-in {
-  from {
-    scale: 1 1;
-    opacity: 1;
-  }
-  to {
-    scale: 0.8 1;
-    opacity: 0;
-  }
-}
-
-@keyframes slide-rotate-90 {
-  0%,
-  100% {
-    rotate: y 0deg;
-  }
-  20% {
-    rotate: y 90deg;
-  }
-  80% {
-    rotate: y 90deg;
-  }
-}
-
-@keyframes slide-rotate-180 {
-  0%,
-  100% {
-    rotate: y 90deg;
-  }
-  20% {
-    rotate: y 180deg;
-  }
-  40% {
-    rotate: y 180deg;
-  }
-  60% {
-    rotate: y 90deg;
-  }
-}
-
-@keyframes flashing {
-  0%,
-  100% {
-    filter: none;
-  }
-  50% {
-    filter: drop-shadow(0 0 3px);
-  }
-}
-
 @media screen and (min-width: 768px) {
   body #root {
     display: grid;
     grid-template-columns: 300px auto;
     grid-template-areas: "HEADER MAIN" "HEADER FOOTER";
-  }
-  main {
-    & section {
-      & article.stack,
-      & article.exp {
-        & > div {
-          & div.color-backed {
-            font-size: 11cqw;
-          }
-        }
-      }
-    }
   }
 }
