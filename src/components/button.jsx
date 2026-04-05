@@ -16,7 +16,7 @@ function Button({ type, onClick, classNames, getSvg, langKey }) {
   return (
     <div
       aria-label="button-container"
-      className={`${styles.button} ${type === "submit" && theme === "dark" && animStyles.dark} ${classNames}${theme === "dark" ? " dark" : ""}`}
+      className={`${styles.button} ${type === "submit" && theme === "dark" ? animStyles.dark : ""} ${classNames}${theme === "dark" ? " dark" : ""}`}
     >
       <button
         type={type}

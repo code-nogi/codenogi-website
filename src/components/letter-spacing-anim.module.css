@@ -1,6 +1,17 @@
 .letterSpacingAnim {
   position: relative;
   container-type: inline-size;
+  &:hover a,
+  &:hover button,
+  &:focus-visible a,
+  &:focus-visible button {
+    color: var(--color-dark-faded);
+    transform: translateY(-15px);
+    &::before {
+      letter-spacing: 0.4rem;
+      opacity: 1;
+    }
+  }
   & a,
   & button {
     font-size: min(5cqw, 1.5rem);
@@ -29,9 +40,7 @@
       opacity: 0;
       transition: 0.4s ease-out;
     }
-    &.active,
-    &:hover,
-    &:focus-visible {
+    &.active {
       color: var(--color-dark-faded);
       transform: translateY(-15px);
       &::before {
@@ -41,13 +50,20 @@
     }
   }
 }
+.dark:hover a,
+.dark:hover button,
+.dark:focus-visible a,
+.dark:focus-visible button {
+  color: var(--color-green-faded);
+  &::before {
+    color: var(--color-green-glow);
+  }
+}
 .dark a,
 .dark button {
   color: var(--color-green-glow);
   filter: saturate(3);
-  &.active,
-  &:hover,
-  &:focus-visible {
+  &.active {
     color: var(--color-green-faded);
     &::before {
       color: var(--color-green-glow);

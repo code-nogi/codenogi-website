@@ -7,6 +7,7 @@ import TextInput from "./textinput";
 import TextArea from "./textarea";
 import Button from "./button";
 import useFormValidation from "../utilities/use-form-validation.js";
+import generalStyles from "./basic-element.module.css";
 import animStyles from "./letter-spacing-anim.module.css";
 
 /* ----------------------------- */
@@ -22,7 +23,8 @@ function ContactForm() {
       ref={formRef}
       action="https://formsubmit.co/piratosnogi@gmail.com"
       method="POST"
-      className="contact-form basic-element"
+      /* className="contact-form basic-element" */
+      className={generalStyles.basicElement}
       onSubmit={handleChange}
     >
       <input type="hidden" name="_captcha" value="true" />

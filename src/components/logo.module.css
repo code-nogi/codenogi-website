@@ -4,10 +4,26 @@
   justify-content: center;
   align-items: center;
   & svg {
-    color: radial-gradient(
+    /*     color: radial-gradient(
       circle,
       var(--color-green-glow) 11%,
       var(--color-light-background) 100%
-    );
+    ); */
+    & path {
+      &:first-of-type {
+        filter: drop-shadow(1px 1px 3px currentColor)
+          drop-shadow(-1px -1px 3px currentColor);
+      }
+    }
   }
+}
+.green-letter {
+  color: var(--color-green-glow);
+  filter: drop-shadow(1px 1px 3px var(--color-green-glow))
+    drop-shadow(-1px -1px 3px var(--color-green-glow));
+}
+.red-letter {
+  color: var(--color-red);
+  filter: drop-shadow(1px 1px 3px var(--color-red))
+    drop-shadow(-1px -1px 3px var(--color-red));
 }
