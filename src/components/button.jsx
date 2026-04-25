@@ -4,18 +4,17 @@
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../utilities/theme-context";
 import styles from "./button.module.css";
-import animStyles from "./letter-spacing-anim.module.css";
+import animStyles from "./reflect-anim.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
-function Button({ type, onClick, classNames, getSvg, langKey }) {
+function Button({ type, onClick = null, classNames, getSvg = null, langKey }) {
   const { t } = useTranslation();
   const { theme } = useTheme();
 
   return (
     <div
-      aria-label="button-container"
       className={`${styles.button} ${type === "submit" && theme === "dark" ? animStyles.dark : ""} ${classNames}${theme === "dark" ? " dark" : ""}`}
     >
       <button

@@ -13,7 +13,7 @@ function HomeStackArticle() {
     <article className={styles.stack}>
       {homeStackArray.map((stack, index) => (
         <StackItem
-          key={`homestack-${index + 1}`}
+          key={stack.letter}
           hasSVGFront={false}
           hasWhiteBG={false}
           langKey={null}

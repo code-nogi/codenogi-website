@@ -1,11 +1,3 @@
-/* TODOs:
-1. NODEMAILER!
-2. LETTER-SPACING-ANIM vibration
-3. 
-4. 
-5. 
-*/
-
 /* ----------------------------- */
 /* IMPORTS                       */
 /* ----------------------------- */
@@ -42,18 +34,22 @@ function App() {
   const [activeSection, setActiveSection] = useState("home-ref");
 
   //MENU ACTIVATION from scrolling
+  //Working only with fix sections
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.getAttribute("id"));
+            const newSectionId = entry.target.getAttribute("id");
+            setActiveSection((prev) =>
+              prev === newSectionId ? prev : newSectionId,
+            );
           }
         });
       },
       {
-        rootMargin: "-40% 0px -60% 0px",
+        rootMargin: "-20% 0px -60% 0px",
       },
     );
     sections.forEach((section) => observer.observe(section));
@@ -61,57 +57,54 @@ function App() {
   }, []);
 
   return (
-    <>
-      <ThemeProvider>
-        <Scroller />
-        <Background />
-        <Header activeSection={activeSection} />
-        <Main>
-          <Section id="home-ref" className="home">
-            <SectionHeading langKey="Home" />
-            <HomeArticle />
-            <HomeStackArticle />
-            <Anchor
-              activeSection={activeSection}
-              href="#contact-ref"
-              type="individual"
-              getSvg={null}
-              langKey="Work-with-me"
+    <ThemeProvider>
+      <Scroller />
+      <Background />
+      <Header activeSection={activeSection} />
+      <Main>
+        <Section id="home-ref" className="home">
+          <SectionHeading langKey="Home" />
+          <HomeArticle />
+          <HomeStackArticle />
+          <Anchor
+            activeSection={activeSection}
+            href="#contact-ref"
+            type="individual"
+            langKey="Work-with-me"
+          />
+        </Section>
+        <Section id="about-ref" className="about">
+          <SectionHeading langKey="About" />
+          <AboutGreetingArticle />
+          <AboutIntroArticle />
+          <AboutExperienceArticle />
+        </Section>
+        <Section id="skill-ref" className="skill">
+          <SectionHeading langKey="Skills" />
+          <SkillArticle />
+          <SkillStackArticle />
+        </Section>
+        <Section id="portfolio-ref" className="portfolio">
+          <SectionHeading langKey="Portfolio" />
+          <PortfolioArticle />
+          {projectDataArray.map((project, index) => (
+            <ProjectCard
+              key={project.name}
+              langKeys={project.langKeys}
+              techs={project.techs}
+              githubURL={project.githubURL}
+              demoURL={project.demoURL}
             />
-          </Section>
-          <Section id="about-ref" className="about">
-            <SectionHeading langKey="About" />
-            <AboutGreetingArticle />
-            <AboutIntroArticle />
-            <AboutExperienceArticle />
-          </Section>
-          <Section id="skill-ref" className="skill">
-            <SectionHeading langKey="Skills" />
-            <SkillArticle />
-            <SkillStackArticle />
-          </Section>
-          <Section id="portfolio-ref" className="portfolio">
-            <SectionHeading langKey="Portfolio" />
-            <PortfolioArticle />
-            {projectDataArray.map((project, index) => (
-              <ProjectCard
-                key={`project-${index + 1}`}
-                langKeys={project.langKeys}
-                techSVGs={project.techSVGs}
-                githubURL={project.githubURL}
-                demoURL={project.demoURL}
-              />
-            ))}
-          </Section>
-          <Section id="contact-ref" className="contact">
-            <SectionHeading langKey="Contact" />
-            <ContactArticle />
-            <ContactForm />
-          </Section>
-        </Main>
-        <Footer langKey="Footer" />
-      </ThemeProvider>
-    </>
+          ))}
+        </Section>
+        <Section id="contact-ref" className="contact">
+          <SectionHeading langKey="Contact" />
+          <ContactArticle />
+          <ContactForm />
+        </Section>
+      </Main>
+      <Footer langKey="Footer" />
+    </ThemeProvider>
   );
 }
 

@@ -2,7 +2,6 @@
 /* IMPORTS                       */
 /* ----------------------------- */
 import styles from "./main.module.css";
-import generalStyles from "./basic-element.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */

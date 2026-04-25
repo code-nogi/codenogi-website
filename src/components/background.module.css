@@ -1,0 +1,42 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -100;
+  & svg {
+    color: var(--color-green-more-faded);
+  }
+}
+.dark {
+  background-color: var(--color-dark-background);
+}
+.animated {
+  color: var(--color-green-glow);
+  stroke-dasharray: 8 300;
+  stroke-dashoffset: -300;
+  animation: circuit-flow linear;
+  animation-timeline: scroll(root);
+}
+.redLetter {
+  color: var(--color-red);
+  stroke: var(--color-red-faded);
+  fill: var(--color-red-faded);
+  filter: drop-shadow(1px 1px 3px currentColor)
+    drop-shadow(-1px -1px 3px currentColor);
+}
+.greenLetter {
+  color: var(--color-green-glow);
+  stroke: var(--color-green-more-faded);
+  fill: var(--color-green-more-faded);
+  filter: drop-shadow(1px 1px 3px currentColor)
+    drop-shadow(-1px -1px 3px currentColor);
+}
+
+@keyframes circuit-flow {
+  to {
+    stroke-dashoffset: 308;
+  }
+}

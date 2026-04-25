@@ -49,6 +49,8 @@
       "Blank-message": "Please fill in the {{subject}} field!",
       "Invalid-message": "Please enter a valid {{subject}}!",
       "Send-message": "SEND MESSAGE",
+      "SendingEmail": "Sending email...",
+      "EmailSent": "Email has sent.",
       "Footer": "Copyright © 2026 József Nógrádi"
     }
   },
@@ -102,6 +104,8 @@
       "Blank-message": "Kérlek tölts ki a {{subject}} mezőt!",
       "Invalid-message": "Kérlek, érvényes {{subject}}-et adj meg!",
       "Send-message": "ÜZENET KÜLDÉSE",
+      "SendingEmail": "Email küldése...",
+      "EmailSent": "Email elküldve.",
       "Footer": "Minden jog fenntartva © 2026 Nógrádi József"
     }
   }

@@ -10,7 +10,7 @@ import generalStyles from "./basic-element.module.css";
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
-function ProjectCard({ langKeys, techSVGs, githubURL, demoURL }) {
+function ProjectCard({ langKeys, techs, githubURL, demoURL }) {
   const { t } = useTranslation();
   return (
     <div
@@ -23,9 +23,9 @@ function ProjectCard({ langKeys, techSVGs, githubURL, demoURL }) {
         aria-label="portfolio project tech stack"
         className={styles.usedTech}
       >
-        {techSVGs.map((svgGetter, index) => (
-          <div className={generalStyles.whiteBacked} key={index}>
-            {svgGetter()}
+        {techs.map((tech, index) => (
+          <div className={generalStyles.whiteBacked} key={tech.name}>
+            {tech.svg()}
           </div>
         ))}
       </div>

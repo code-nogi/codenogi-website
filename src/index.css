@@ -7,6 +7,7 @@
 /* VARIABLES                     */
 /* ----------------------------- */
 :root {
+  font-size: 20px;
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -116,6 +117,7 @@
   text-decoration: none;
   list-style: none;
   outline: none;
+  font-family: "Poppins", sans-serif;
 }
 textarea,
 input {
@@ -139,10 +141,6 @@ svg {
 /* ----------------------------- */
 /* HTML & BODY STYLE             */
 /* ----------------------------- */
-* {
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-}
 html {
   scroll-behavior: smooth;
 }
@@ -153,38 +151,12 @@ body {
 }
 
 /* ----------------------------- */
-/* BACKGROUND STYLE              */
+/* MEDIA QUERIES                 */
 /* ----------------------------- */
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -100;
-  &.dark {
-    background-color: var(--color-dark-background);
-  }
-  & svg {
-    color: var(--color-green-more-faded);
-    & .animated {
-      color: var(--color-green-glow);
-      stroke-dasharray: 8 300;
-      stroke-dashoffset: -300;
-      filter: drop-shadow(0 0 2px currentColor);
-      animation: circuit-flow linear;
-      animation-timeline: scroll(root);
-    }
-  }
-}
-
-/* ----------------------------- */
-/* ANIMATIONS                    */
-/* ----------------------------- */
-@keyframes circuit-flow {
-  to {
-    stroke-dashoffset: 308;
+@media (prefers-reduced-motion: reduce) {
+  .background .animated {
+    animation: none;
+    filter: none;
   }
 }
 

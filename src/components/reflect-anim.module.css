@@ -1,0 +1,47 @@
+.reflectAnim {
+  position: relative;
+  container-type: inline-size;
+  &:hover a,
+  &:hover button,
+  &:focus-visible a,
+  &:focus-visible button {
+    color: var(--color-dark);
+    transform: translateY(-0.5rem);
+    -webkit-box-reflect: below -1rem
+      linear-gradient(transparent 20%, var(--color-dark));
+  }
+  & a,
+  & button {
+    font-size: min(5cqw, 1.5rem);
+    position: relative;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-dark-faded);
+    padding: 0 1rem;
+    overflow: hidden;
+    transition: 0.4s;
+    &.active {
+      color: var(--color-dark);
+      transform: translateY(-0.5rem);
+      -webkit-box-reflect: below -1rem
+        linear-gradient(transparent 20%, var(--color-dark));
+    }
+  }
+}
+.dark {
+  &:hover a,
+  &:hover button,
+  &:focus-visible a,
+  &:focus-visible button {
+    color: var(--color-green-glow);
+  }
+  & a,
+  & button {
+    color: var(--color-green-faded);
+    filter: saturate(3);
+    &.active {
+      color: var(--color-green-glow);
+    }
+  }
+}

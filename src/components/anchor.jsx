@@ -4,19 +4,18 @@
 import { useTheme } from "../utilities/theme-context";
 import { useTranslation } from "react-i18next";
 import generalStyles from "./basic-element.module.css";
-import animStyles from "./letter-spacing-anim.module.css";
+import animStyles from "./reflect-anim.module.css";
 
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
-function Anchor({ activeSection, href, type, getSvg, langKey }) {
+function Anchor({ activeSection, href, type, getSvg = null, langKey }) {
   const { t } = useTranslation();
   const { theme } = useTheme();
 
   return (
     <div
-      aria-label="anchor-container"
-      className={`${type === "individual" && generalStyles.basicElement} ${type != "icon" && animStyles.letterSpacingAnim} ${type != "icon" && theme === "dark" ? animStyles.dark : ""}`}
+      className={`${type === "individual" ? generalStyles.basicElement : ""} ${type !== "icon" ? animStyles.reflectAnim : ""} ${type !== "icon" && theme === "dark" ? animStyles.dark : ""}`}
     >
       <a
         href={href}

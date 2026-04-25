@@ -18,19 +18,22 @@ function TextInput({ langKey, type }) {
   const { blank, valid, handleChange } = useFormValidation(inputRef);
   const { theme } = useTheme();
 
+  const honeypot = langKey === "Phone-placeholder" ? true : false;
+
   return (
     <>
       <input
         ref={inputRef}
         type={type}
-        required
+        required={honeypot ? false : true}
         onChange={handleChange}
         placeholder={t(langKey)}
         className={`${styles.formItem} ${theme === "dark" ? "dark" : ""}`}
         name={langKey.toLowerCase().replace("-placeholder", "")}
         autoComplete="off"
-        minLength={type === "email" ? "6" : "2"}
-        maxLength={type === "email" ? "254" : "100"}
+        tabIndex={honeypot ? -1 : 0}
+        minLength={type === "email" ? 6 : 2}
+        maxLength={type === "email" ? 254 : 100}
         pattern={type === "email" ? "[^@]+@[^@]+\\.[^@]+" : undefined}
       />
       {blank ? (

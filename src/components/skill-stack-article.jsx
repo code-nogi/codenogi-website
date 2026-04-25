@@ -13,7 +13,7 @@ function SkillStackArticle() {
     <article className={styles.stack}>
       {skillStackArray.map((stack, index) => (
         <StackItem
-          key={`skillstack-${index + 1}`}
+          key={stack.langKey}
           hasSVGFront={true}
           hasWhiteBG={true}
           langKey={stack.langKey}

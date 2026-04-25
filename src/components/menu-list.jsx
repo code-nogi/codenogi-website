@@ -11,8 +11,6 @@ import generalStyles from "./basic-element.module.css";
 /* COMPONENT                     */
 /* ----------------------------- */
 function MenuList({ isOpen, activeSection }) {
-  const { theme } = useTheme();
-
   return (
     <ul
       aria-label="menu list"
@@ -24,7 +22,6 @@ function MenuList({ isOpen, activeSection }) {
             type="animated"
             activeSection={activeSection}
             href={menuitem.href}
-            getSvg={null}
             langKey={menuitem.langKey}
           />
         </li>
