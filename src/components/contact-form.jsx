@@ -23,7 +23,7 @@ function ContactForm() {
     const formData = new FormData(event.target);
     let emailObject = {};
     for (const [key, value] of formData) {
-      emailObject[key] = value;
+      emailObject[key] = value.trim();
     }
     if (emailObject.phone) return;
     emailObject.site = "codenogi";

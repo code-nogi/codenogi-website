@@ -80,19 +80,17 @@ const projectDataArray = [
     demoURL: "https://hunmetdataapi.hu/aerodromes",
   },
   {
-    name: "optima",
-    langKeys: ["Optima-title", "Optima-text"],
+    name: "kiddy",
+    langKeys: ["Kiddy-title", "Kiddy-text"],
     techs: [
       { name: "mongodb", svg: getMongoDBSVG },
       { name: "mongoose", svg: getMongooseSVG },
       { name: "nodejs", svg: getNodeJSSVG },
       { name: "express", svg: getExpressSVG },
-      { name: "html", svg: getHTMLSVG },
-      { name: "css", svg: getCSSSVG },
-      { name: "js", svg: getJSSVG },
+      { name: "react", svg: getReactSVG },
     ],
-    githubURL: "#",
-    demoURL: "#",
+    githubURL: "https://github.com/code-nogi/KIDDY",
+    demoURL: "https://hunmetdataapi.hu/kiddy/play",
   },
 ];
 

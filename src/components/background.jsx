@@ -153,12 +153,6 @@ function Background() {
           transform="translate(315, 290) scale(0.8)"
           strokeWidth="3"
           className={styles.greenLetter}
-          /* stroke="var(--color-green-glow)"
-          fill="var(--color-green-more-faded)"
-          style={{
-            filter:
-              "drop-shadow(1px 1px 3px var(--color-green-glow)) drop-shadow(-1px -1px 3px var(--color-green-glow))",
-          }} */
         />
 
         {/* LETTER I */}
@@ -167,12 +161,6 @@ function Background() {
           transform="translate(405, 290) scale(0.8)"
           strokeWidth="3"
           className={styles.greenLetter}
-          /* stroke="var(--color-green-glow)"
-          fill="var(--color-green-more-faded)"
-          style={{
-            filter:
-              "drop-shadow(1px 1px 3px var(--color-green-glow)) drop-shadow(-1px -1px 3px var(--color-green-glow))",
-          }} */
         />
       </svg>
     </div>

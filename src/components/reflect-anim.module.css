@@ -1,14 +1,18 @@
 .reflectAnim {
   position: relative;
   container-type: inline-size;
+  transition: all var(--transition-duration);
   &:hover a,
   &:hover button,
   &:focus-visible a,
   &:focus-visible button {
+    display: block;
     color: var(--color-dark);
     transform: translateY(-0.5rem);
-    -webkit-box-reflect: below -1rem
-      linear-gradient(transparent 20%, var(--color-dark));
+    &::before {
+      content: "!";
+      color: var(--color-red);
+    }
   }
   & a,
   & button {
@@ -24,8 +28,10 @@
     &.active {
       color: var(--color-dark);
       transform: translateY(-0.5rem);
-      -webkit-box-reflect: below -1rem
-        linear-gradient(transparent 20%, var(--color-dark));
+      &::before {
+        content: "!";
+        color: var(--color-red);
+      }
     }
   }
 }
