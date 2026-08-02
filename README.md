@@ -101,10 +101,10 @@ npm run deploy
 
 Ez a `dist/` mappát publikálja a `gh-pages` branchre.
 
-A `vite.config.js`-ben a `base` URL alapértelmezetten `/codenogi-website/`. Ha más útvonalra deployolsz, állítsd be a `VITE_BASE` environment változót:
+A `vite.config.js`-ben a `base` URL alapértelmezetten `/` — a `deploy` script `cross-env`-en keresztül állítja `/codenogi-website/`-re build közben, platformfüggetlenül (Windows-on natív `cmd`/PowerShell alól a korábbi `VAR=érték parancs` szintaxis nem működött volna). Ha más útvonalra deployolsz, állítsd be a `VITE_BASE` environment változót:
 
 ```bash
-VITE_BASE=/saját-útvonal/ npm run build
+npx cross-env VITE_BASE=/saját-útvonal/ npm run build
 ```
 
 ## Konfigurálás
