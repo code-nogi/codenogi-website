@@ -17,8 +17,7 @@
     }
   }
   &.menuActive {
-    box-shadow: 0 0 8px 2px var(--color-red);
-    border: 3px solid var(--color-red);
+    box-shadow: 0 0 11px 3px var(--color-red);
     & button {
       & svg {
         color: var(--color-red);

@@ -33,12 +33,16 @@
   width: stretch;
   height: stretch;
   color: var(--color-dark);
-  background: var(--color-green-glow);
+  background-image: url("./matt_glass_bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*   background: var(--color-green-glow);
   background: radial-gradient(
     circle,
     var(--color-green-glow) 11%,
     var(--color-light-background) 100%
-  );
+  ); */
   font-size: 15cqw;
   aspect-ratio: 1;
   padding: 1cqw;

@@ -14,6 +14,8 @@ import {
   getCSSSVG,
   getJSSVG,
   getMongooseSVG,
+  getClaudeSVG,
+  getClaudeCodeSVG,
 } from "./svg-getters";
 
 /* ----------------------------- */
@@ -50,6 +52,11 @@ const skillStackArray = [
   { langKey: "Mongoose", svgGetter: getMongooseSVG },
   { langKey: "Express", svgGetter: getExpressSVG },
   { langKey: "Node", svgGetter: getNodeJSSVG },
+];
+
+const aiToolArray = [
+  { langKey: "Claude AI", svgGetter: getClaudeSVG },
+  { langKey: "Claude Code", svgGetter: getClaudeCodeSVG },
 ];
 
 const projectDataArray = [
@@ -102,5 +109,6 @@ export {
   homeStackArray,
   experienceStackArray,
   skillStackArray,
+  aiToolArray,
   projectDataArray,
 };

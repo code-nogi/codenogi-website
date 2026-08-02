@@ -10,7 +10,7 @@ A site egy klasszikus single-page portfólió, az alábbi szekciókkal:
 
 - **Home** — bemutatkozás és a MERN stack ikonjai
 - **About** — köszöntés, rövid intro, valamint a korábbi tapasztalatok (katonaság, légtérellenőrzés, pénzügy, vitorlázórepülés)
-- **Skills** — front-end és back-end készségek (HTML, CSS, ES6, React, MongoDB, Mongoose, Express, Node.js)
+- **Skills** — front-end és back-end készségek (HTML, CSS, ES6, React, MongoDB, Mongoose, Express, Node.js), valamint a napi munkában használt AI eszközök (Claude AI, Claude Code)
 - **Portfolio** — projektkártyák GitHub és élő demó linkekkel
 - **Contact** — kapcsolatfelvételi űrlap egy saját REST API-n keresztül (`hunmetdataapi.hu`)
 
@@ -18,7 +18,8 @@ További funkciók:
 
 - Light / dark téma váltó
 - Nyelvváltó (EN / HU) `i18next` alapokon
-- Animált, áramkör-stílusú SVG háttér
+- Animált, áramkör-stílusú SVG háttér, üveghatású (frosted glass) panellel és bemart "!GI" felirattal
+- Matt üveg textúrájú (`matt_glass_bg.svg`) kártya- és ikonhátterek a korábbi sima színátmenet helyett
 - Görgetésérzékeny menü `IntersectionObserver`-rel — a látható szekció kiemelve marad a fejlécben
 - Honeypot mező a kontakt formon spamvédelemnek
 
@@ -38,12 +39,15 @@ További funkciók:
 ```
 codenogi/
 ├── public/
+│   └── matt_glass_bg.svg            # Matt üveg textúra a kártyák/ikonok hátteréhez
 ├── src/
 │   ├── assets/                      # Favicon, képek
 │   ├── components/                  # React komponensek + hozzájuk tartozó CSS Module fájlok
 │   │   ├── header.jsx
 │   │   ├── menu.jsx
-│   │   ├── background.jsx           # SVG áramköri animáció
+│   │   ├── background.jsx           # SVG áramköri animáció, üveghatással és bemart felirattal
+│   │   ├── tool-article.jsx         # AI eszközök szekció szövege
+│   │   ├── tool-stack-article.jsx   # AI eszközök ikon-stack (Claude AI, Claude Code)
 │   │   ├── contact-form.jsx
 │   │   ├── dialog.jsx
 │   │   ├── project-card.jsx
@@ -107,7 +111,7 @@ VITE_BASE=/saját-útvonal/ npm run build
 
 ### Tartalmak szerkesztése
 
-A statikus tartalmak (menüpontok, projektek listája, tech stack ikonok) központosítva, a `src/utilities/constants.js`-ben találhatók. Új projekt hozzáadásához bővítsd a `projectDataArray`-t:
+A statikus tartalmak (menüpontok, projektek listája, tech stack ikonok, AI eszközök listája) központosítva, a `src/utilities/constants.js`-ben találhatók. Új AI eszköz hozzáadásához bővítsd az `aiToolArray`-t egy `langKey` / `svgGetter` párral. Új projekt hozzáadásához bővítsd a `projectDataArray`-t:
 
 ```javascript
 {

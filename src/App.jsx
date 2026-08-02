@@ -18,6 +18,8 @@ import AboutIntroArticle from "./components/about-intro-article";
 import AboutExperienceArticle from "./components/about-experience-article";
 import SkillArticle from "./components/skill-article";
 import SkillStackArticle from "./components/skill-stack-article";
+import ToolArticle from "./components/tool-article";
+import ToolStackArticle from "./components/tool-stack-article";
 import PortfolioArticle from "./components/portfolio-article";
 import ProjectCard from "./components/project-card";
 import ContactArticle from "./components/contact-article";
@@ -83,6 +85,8 @@ function App() {
           <SectionHeading langKey="Skills" />
           <SkillArticle />
           <SkillStackArticle />
+          <ToolArticle />
+          <ToolStackArticle />
         </Section>
         <Section id="portfolio-ref" className="portfolio">
           <SectionHeading langKey="Portfolio" />

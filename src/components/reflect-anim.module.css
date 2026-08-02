@@ -8,11 +8,7 @@
   &:focus-visible button {
     display: block;
     color: var(--color-dark);
-    transform: translateY(-0.5rem);
-    &::before {
-      content: "!";
-      color: var(--color-red);
-    }
+    transform: translateY(-0.3rem);
   }
   & a,
   & button {
@@ -27,11 +23,7 @@
     transition: 0.4s;
     &.active {
       color: var(--color-dark);
-      transform: translateY(-0.5rem);
-      &::before {
-        content: "!";
-        color: var(--color-red);
-      }
+      transform: translateY(-0.3rem);
     }
   }
 }

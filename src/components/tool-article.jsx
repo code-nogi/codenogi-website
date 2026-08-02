@@ -8,13 +8,11 @@ import generalStyles from "./basic-element.module.css";
 /* ----------------------------- */
 /* COMPONENT                     */
 /* ----------------------------- */
-function AboutIntroArticle() {
+function ToolArticle() {
   const { t } = useTranslation();
   return (
     <article className={`${styles.article} ${generalStyles.basicElement}`}>
-      <p>{t("Intro")}</p>
-      <p>{t("Training")}</p>
-      <p>{t("Experience")}</p>
+      <p>{t("Tools")}</p>
     </article>
   );
 }
@@ -22,4 +20,4 @@ function AboutIntroArticle() {
 /* ----------------------------- */
 /* EXPORTS                       */
 /* ----------------------------- */
-export default AboutIntroArticle;
+export default ToolArticle;
