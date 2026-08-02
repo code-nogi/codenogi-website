@@ -33,7 +33,7 @@
   width: stretch;
   height: stretch;
   color: var(--color-dark);
-  background-image: url("./matt_glass_bg.svg");
+  background-image: url("../assets/matt_glass_bg.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
